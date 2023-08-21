@@ -4,38 +4,63 @@ using UnityEngine;
 
 public class HackingTrigger : MonoBehaviour
 {
-    BoxCollider boxCollider;
+    SphereCollider sphereCollider;
     IHackingGame game;
+
+    bool triggered;
 
     void Start()
     {
-        boxCollider = GetComponent<BoxCollider>();
+        sphereCollider = GetComponent<SphereCollider>();
+        game = GetComponent<IHackingGame>();
+        triggered = false;
     }
 
-    bool checkForInput()
+    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            game.Activate();
-            return true;
-        }
+        checkForInput();
+    }
 
-        return false;
+    void checkForInput()
+    {
+        if (triggered)
+        {
+            if (Input.GetKeyDown(KeyCode.E) && !game.isActivated)   
+            {
+                game.Activate();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape) && game.isActivated)
+            {
+                game.Exit();
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Something entered the trigger - " + other.gameObject.name);
         if (other.gameObject.CompareTag("Player"))
         {
-            checkForInput();
+            triggered = true;
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log("Something is staying in the trigger - " + other.gameObject.name);
         if (other.gameObject.CompareTag("Player"))
         {
-            checkForInput();
+            triggered = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log("Something is staying in the trigger - " + other.gameObject.name);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            triggered = false;
         }
     }
 }
