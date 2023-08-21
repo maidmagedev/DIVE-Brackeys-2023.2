@@ -5,7 +5,9 @@ using UnityEngine;
 public interface IHackingGame
 {
     bool isCompleted { get; set; }
+    bool isActivated { get; set; }
 
     void Activate();
-    void Deactivate();
+    void Finish();
+    void Exit();
 }
