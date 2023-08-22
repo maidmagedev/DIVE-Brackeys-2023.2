@@ -46,9 +46,9 @@ public class ThirdPersonCamera : MonoBehaviour
 
         // Mouse Scroll Wheel Camera Zoom
         if (Input.mouseScrollDelta.y < 0) {
-            cam.m_Lens.FieldOfView -= 5;
-        } else if (Input.mouseScrollDelta.y > 0) {
             cam.m_Lens.FieldOfView += 5;
+        } else if (Input.mouseScrollDelta.y > 0) {
+            cam.m_Lens.FieldOfView -= 5;
         }
 
         // FOV limits.
