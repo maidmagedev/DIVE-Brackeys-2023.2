@@ -20,7 +20,6 @@ public class SkillCheckPointerManager : MonoBehaviour
 
     void Start()
     {
-        marker = transform.parent.GetComponentInChildren<SkillCheckMarker>();
         rectTransform = GetComponent<RectTransform>();
 
         currentRot = Random.Range(0.0f, 360.0f);
