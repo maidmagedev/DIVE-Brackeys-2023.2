@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class SkillCheckPointerManager : MonoBehaviour
 {
-    [SerializeField] SkillCheckMarker marker;
+    [SerializeField] private SkillCheckMarker marker;
+    [SerializeField] private float currentRot;
     public float rotationSpeed;
 
+    public CircleSkillCheck game;
     private RectTransform rectTransform;
 
     private float targetRot;
-
-    [SerializeField] private float currentRot;
+    
     private float rotationDir;
     private bool isActive;
 
@@ -52,12 +53,21 @@ public class SkillCheckPointerManager : MonoBehaviour
                 float diff = targetRot - Mathf.Abs(currentRot);
                 if (Mathf.Abs(diff) < 15.0f)
                 {
-                    targetRot = marker.RandomRot();
+                    if (completedCount < 2)
+                    {
+                        targetRot = marker.RandomRot();
+                    }
+                    
                     completedCount++;
                 }
 
                 rotationSpeed *= -1.0f;
             }
+        }
+
+        if (completedCount == 3)
+        {
+            
         }
     }
 }
