@@ -2,17 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameSpawner : MonoBehaviour
+public class HackingGameSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private GameObject gamePrefab;
+    private IHackingGame currentGame;
+
+
+    public void Start()
     {
-        
+        currentGame = null;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CreateGame(GameObject gameObject)
     {
-        
+        gamePrefab = Instantiate(gameObject);
+        gamePrefab.transform.parent = this.transform;
+
+        currentGame = gamePrefab.GetComponent<IHackingGame>();
+        currentGame.gameSpawner = GetComponent<HackingGameSpawner>();
+    }
+
+    public void DestroyGame()
+    {
+        if (gamePrefab != null)
+        {
+            Destroy(gamePrefab);
+            currentGame = null;
+        }
     }
 }
