@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class HackingGameSpawner : MonoBehaviour
 {
-    private GameObject currentGame;
+    private GameObject gamePrefab;
+    private IHackingGame currentGame;
 
 
     public void Start()
@@ -14,16 +15,19 @@ public class HackingGameSpawner : MonoBehaviour
 
     public void CreateGame(GameObject gameObject)
     {
-        currentGame = Instantiate(gameObject);
-        currentGame.transform.parent = this.transform;
-        //currentGame.GetComponentInChildren<SkillCheckPointerManager>().game = 
+        gamePrefab = Instantiate(gameObject);
+        gamePrefab.transform.parent = this.transform;
+
+        currentGame = gamePrefab.GetComponent<IHackingGame>();
+        currentGame.gameSpawner = GetComponent<HackingGameSpawner>();
     }
 
     public void DestroyGame()
     {
-        if (currentGame != null)
+        if (gamePrefab != null)
         {
-            Destroy(currentGame);
+            Destroy(gamePrefab);
+            currentGame = null;
         }
     }
 }

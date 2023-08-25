@@ -67,7 +67,7 @@ public class SkillCheckPointerManager : MonoBehaviour
 
         if (completedCount == 3)
         {
-            
+            game.Finish();
         }
     }
 }

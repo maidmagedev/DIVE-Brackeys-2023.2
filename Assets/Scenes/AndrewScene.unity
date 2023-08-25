@@ -220,7 +220,6 @@ GameObject:
   - component: {fileID: 320965550}
   - component: {fileID: 320965549}
   - component: {fileID: 320965548}
-  - component: {fileID: 320965547}
   m_Layer: 7
   m_Name: SphereTrigger
   m_TagString: Untagged
@@ -243,19 +242,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9861373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &320965547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320965545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc9010b61f2ddfd40b62984545398965, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hackingGameSpawner: {fileID: 917647054}
 --- !u!114 &320965548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +254,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dea2f15e9cc9684eb01d5d4e7295860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamePrefab: {fileID: 683035550744875630, guid: 91d1b8204ebdef446b3442aeb7bcc494,
+    type: 3}
+  gameSpawner: {fileID: 917647054}
 --- !u!135 &320965549
 SphereCollider:
   m_ObjectHideFlags: 0

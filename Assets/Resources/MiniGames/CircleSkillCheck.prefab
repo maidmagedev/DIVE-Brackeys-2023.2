@@ -187,8 +187,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7071742610996906783}
+  - component: {fileID: 714775810156969726}
   m_Layer: 5
-  m_Name: CircleSkillCheckUI
+  m_Name: CircleSkillCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,6 +211,19 @@ Transform:
   - {fileID: 8179775375392597313}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &714775810156969726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683035550744875630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc9010b61f2ddfd40b62984545398965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hackingGameSpawner: {fileID: 0}
 --- !u!1 &3082678898075171602
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,3 +552,4 @@ MonoBehaviour:
   marker: {fileID: 3190435961379476677}
   currentRot: 0
   rotationSpeed: 2
+  game: {fileID: 714775810156969726}

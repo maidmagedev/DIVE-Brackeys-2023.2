@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class HackingTrigger : MonoBehaviour
 {
-    SphereCollider sphereCollider;
+    public GameObject gamePrefab;
+    public HackingGameSpawner gameSpawner;
+
     IHackingGame game;
+    SphereCollider sphereCollider;
 
     bool triggered;
 
     void Start()
     {
         sphereCollider = GetComponent<SphereCollider>();
-        game = GetComponent<IHackingGame>();
+        if (gamePrefab != null )
+        {
+            game = gamePrefab.GetComponent<IHackingGame>();
+        }
+        else
+        {
+            Debug.Log("This interactable doesn't have a game prefab selected.");
+        }
         triggered = false;
     }
 
@@ -27,12 +37,12 @@ public class HackingTrigger : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E) && !game.isActivated)   
             {
-                game.Activate();
+                gameSpawner.CreateGame(gamePrefab);
             }
 
             if (Input.GetKeyDown(KeyCode.Escape) && game.isActivated)
             {
-                game.Exit();
+                gameSpawner.DestroyGame();
             }
         }
     }
