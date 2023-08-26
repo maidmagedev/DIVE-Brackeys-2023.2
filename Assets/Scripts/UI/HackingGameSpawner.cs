@@ -5,6 +5,7 @@ using UnityEngine;
 public class HackingGameSpawner : MonoBehaviour
 {
     private GameObject gamePrefab;
+    private HackingTrigger hackingTrigger;
     private IHackingGame currentGame;
 
 
@@ -13,8 +14,10 @@ public class HackingGameSpawner : MonoBehaviour
         currentGame = null;
     }
 
-    public void CreateGame(GameObject gameObject)
+    public void CreateGame(GameObject gameObject, GameObject hackingTrigger)
     {
+        this.hackingTrigger = hackingTrigger.GetComponent<HackingTrigger>();
+
         gamePrefab = Instantiate(gameObject);
         gamePrefab.transform.parent = this.transform;
 
@@ -28,6 +31,7 @@ public class HackingGameSpawner : MonoBehaviour
         {
             Destroy(gamePrefab);
             currentGame = null;
+            hackingTrigger.Enable();
         }
     }
 }

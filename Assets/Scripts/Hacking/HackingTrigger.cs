@@ -1,19 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HackingTrigger : MonoBehaviour
+public class HackingTrigger : MonoBehaviour, IInteractable
 {
     public GameObject gamePrefab;
+    public GameObject receiverObj;
     public HackingGameSpawner gameSpawner;
+    public bool isHacked;
 
-    IHackingGame game;
+    private IHackingGame game;
+    private IReceiver receiver;
     SphereCollider sphereCollider;
 
-    bool triggered;
+    private bool triggered;
 
     void Start()
     {
+        receiver = receiverObj.GetComponent<IReceiver>();
         sphereCollider = GetComponent<SphereCollider>();
         if (gamePrefab != null )
         {
@@ -24,6 +29,7 @@ public class HackingTrigger : MonoBehaviour
             Debug.Log("This interactable doesn't have a game prefab selected.");
         }
         triggered = false;
+        isHacked = false;
     }
 
     void Update()
@@ -31,13 +37,13 @@ public class HackingTrigger : MonoBehaviour
         checkForInput();
     }
 
-    void checkForInput()
+    public void checkForInput()
     {
-        if (triggered)
+        if (triggered && !isHacked)
         {
             if (Input.GetKeyDown(KeyCode.E) && !game.isActivated)   
             {
-                gameSpawner.CreateGame(gamePrefab);
+                gameSpawner.CreateGame(gamePrefab, this.gameObject);
             }
 
             if (Input.GetKeyDown(KeyCode.Escape) && game.isActivated)
@@ -72,5 +78,11 @@ public class HackingTrigger : MonoBehaviour
         {
             triggered = false;
         }
+    }
+
+    public void Enable()
+    {
+        isHacked = true;
+        receiver.Activate();
     }
 }
