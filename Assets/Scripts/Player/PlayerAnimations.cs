@@ -2,19 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Callbacks;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
 // Mainly a test script, to be replaced or revamped once systems are in place
 public class PlayerAnimations : MonoBehaviour
 {
     [SerializeField] Animator animator;
+    [SerializeField] PlayerMovement playerMovement; 
     public int attackState = 1;
     public bool atIdle = true;
     public bool isInAction = false;
     private bool allowBufferInput = false; // if true, allows the player to queue up the next move in an attack string.
     public bool allowAnimationCancel = false; // allows this animation to be overridden.
-            public int debugqueuesize;
-
+    public int debugqueuesize;
 
     // AnimStates are used by the animation queue - containing,
     // clipName - information on which animation clip to play via Crossfade() - must be in the animator's animation controller
@@ -27,17 +29,20 @@ public class PlayerAnimations : MonoBehaviour
         public float transitionTime;
         public bool disableBufferOnStart; // Usually false.
         public bool disableCancelOnStart; // Usually true.
+        public bool disableMovement;
 
-        public AnimState(string clipName, float duration, float transitionTime, bool disableBufferOnStart, bool disableCancelOnStart) {
+        public AnimState(string clipName, float duration, float transitionTime, bool disableBufferOnStart, bool disableCancelOnStart, bool disableMovement) {
             this.clipName = clipName;
             this.duration = duration;
             this.transitionTime = transitionTime;
             this.disableBufferOnStart = disableBufferOnStart;
             this.disableCancelOnStart = disableCancelOnStart;
+            this.disableMovement = disableMovement;
         }
     }
 
     Queue<AnimState> animQueue = new Queue<AnimState>();
+    bool isRunning = false;
 
     // Start is called before the first frame update
     void Start()
@@ -53,12 +58,23 @@ public class PlayerAnimations : MonoBehaviour
         if (!isInAction && animQueue.Count > 0) {
             StartCoroutine(AnimationQueueHandler());
         }
-        if (animQueue.Count == 0 && !atIdle) {
-            animQueue.Enqueue(new AnimState("Idle", 0.1f, 0.25f, false, false));
+        if (animQueue.Count == 0) {
+            if (!atIdle && !isInAction && playerMovement.rb.velocity.magnitude < 0.1f) {
+                animQueue.Enqueue(new AnimState("Idle", 0.1f, 0.25f, true, true, true));
+                isRunning = false;
+            } else if (!isInAction && playerMovement.rb.velocity.magnitude > 0.1f && !isRunning) {
+                animator.CrossFade("Run", 0.0f, 0);
+                //animQueue.Enqueue(new AnimState("Run", 0.833f, 0.25f, false, false, false));
+                atIdle = false;
+                isRunning = true;
+            }
         }
 
-        if (atIdle) {
-            attackState = 1;
+
+        
+
+        if (!isInAction) {
+            ResetBufferedAttackState();
         }
     }
 
@@ -74,37 +90,70 @@ public class PlayerAnimations : MonoBehaviour
                     // only accept one buffer at a time.
                     allowBufferInput = false;
                 }
-                Debug.Log("Queuing Swing: " + attackState);
+                Debug.Log(" + {BUFFER} Queuing Swing: " + attackState);
                 switch(attackState) {
                     case 1:
-                        animQueue.Enqueue(new AnimState("Heavy1", 1.042f, 0.1f, false, true));
+                        animQueue.Enqueue(new AnimState("Heavy1", 2.708f, 0.0f, false, true, true));
                         break;
                     case 2:
-                        animQueue.Enqueue(new AnimState("Heavy2", 1.333f, 0.25f, false, true));
+                        animQueue.Enqueue(new AnimState("Heavy2", 2.667f, 0f, false, true, true));
                         break;
                     case 3:
-                        animQueue.Enqueue(new AnimState("Heavy5", 1.792f, 0.25f, false, true));
+                        animQueue.Enqueue(new AnimState("Heavy3", 2.667f, 0f, false, true, true));
+                        break;
+                    case 4:
+                        animQueue.Enqueue(new AnimState("Heavy4", 2.667f, 0f, false, true, true));
+                        break;
+                    case 5:
+                        animQueue.Enqueue(new AnimState("Heavy5", 2.042f, 0f, false, true, true));
                         break;
                 }
                 attackState++;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            Debug.Log("DASH OVERRIDE!");
+            animQueue.Clear();
+            StopAllCoroutines();
+            isInAction = false;
+            playerMovement.allowMovement = true;
+            StartCoroutine(playerMovement.MovePlayerForDuration(500, 0.2f));
+            animQueue.Enqueue(new AnimState("Dash", 0.667f, 0, true, true, true));
+        }
+    }
+
+
+    public void MovementEvent(float duration) {
+        StartCoroutine(playerMovement.MovePlayerForDuration(100, duration));
+    }
+
+    public void EnableMovement() {
+        playerMovement.allowMovement = true;
     }
 
     // Plays the first item in the Animation Queue for the specified time of that item. Returns to idle after the animation ends.
     IEnumerator AnimationQueueHandler() {
         atIdle = false;
         isInAction = true;
+        isRunning = false;
+
+
         AnimState currAnimation = animQueue.Dequeue();
-        Debug.Log("Playing animation with name: " + currAnimation.clipName);
+
+        playerMovement.allowMovement = !currAnimation.disableMovement;
+
+        Debug.Log("[Q] - Playing animation with name: " + currAnimation.clipName);
+        animator.CrossFade("Idle", 0.1f, 0);
+        yield return null;
         animator.CrossFade(currAnimation.clipName, currAnimation.transitionTime, 0);
 
         // Handle additional conditions for this AnimState.
         allowBufferInput = !currAnimation.disableBufferOnStart;
         allowAnimationCancel = !currAnimation.disableCancelOnStart;
 
-        if (currAnimation.clipName == "Idle") {
-            Debug.Log("Returning to idle state.");
+        if (currAnimation.clipName.CompareTo("Idle") == 0) {
+            Debug.Log(" > Returning to idle state.");
             atIdle = true;
         }
 
@@ -112,18 +161,21 @@ public class PlayerAnimations : MonoBehaviour
         float elapsedTime = 0.0f;
         bool cancelAnimation = false;
         // If cancelAnimation becomes true, for any reason, then we will stop this animation, we will stop this loop.
-        while (elapsedTime < currAnimation.duration || (elapsedTime < currAnimation.duration && !cancelAnimation)) {
+        while (elapsedTime < currAnimation.duration && !cancelAnimation) {
             // Check if we should cancel the animation, and there is another animation queued.
             // Note that animations are expected to only be in queue when they can be played next,
             // - so basically, a walk animation won't be queued until the player is idle or the animation can be canceled.
-            if (allowAnimationCancel && animQueue.Count > 0) {
+            if (allowAnimationCancel && animQueue.Count > 0 || allowAnimationCancel && playerMovement.playerHasInput) {
+                Debug.Log(" > cancel animing");
                 cancelAnimation = true;
+                playerMovement.allowMovement = false;
             }
-            yield return new WaitForEndOfFrame();
             elapsedTime += Time.deltaTime;
+            yield return null;
         }
         isInAction = false;
-        Debug.Log("Ended QueueHandler.");
+        playerMovement.allowMovement = true;
+        Debug.Log("[Q] - Ended QueueHandler.");
     }
     
 
@@ -137,8 +189,10 @@ public class PlayerAnimations : MonoBehaviour
         } else {
             newState = true;
         }
+
+        
         allowBufferInput = newState;
-        Debug.Log("Set buffer input state to: " + newState);
+        Debug.Log(" * Set buffer input state to: " + newState);
     }
 
     // Used by Events in Imported Animation Clips in order to allow the animation to be canceled early.
@@ -152,8 +206,12 @@ public class PlayerAnimations : MonoBehaviour
         } else {
             newState = true;
         }
-        allowBufferInput = newState;
-        Debug.Log("Set allow anim cancel input state to: " + newState);
+        allowAnimationCancel = newState;
+        Debug.Log(" * Set allow anim cancel input state to: " + newState);
+    }
+
+    private void ResetBufferedAttackState() {
+        attackState = 1;
     }
 }
 

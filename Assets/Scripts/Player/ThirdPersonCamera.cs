@@ -23,7 +23,7 @@ public class ThirdPersonCamera : MonoBehaviour
     public Rigidbody rb;
     public CinemachineFreeLook cam;
     
-    public float rotationSpeed;
+    public float bodyRotationSpeed;
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
@@ -41,7 +41,7 @@ public class ThirdPersonCamera : MonoBehaviour
 
         // Changes the player object's forward direction towards the camera's facing direction. This also rotates the player.
         if (inputDir != Vector3.zero) {
-            playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
+            playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * bodyRotationSpeed);
         }
 
         // Mouse Scroll Wheel Camera Zoom
@@ -58,5 +58,11 @@ public class ThirdPersonCamera : MonoBehaviour
         if (cam.m_Lens.FieldOfView < lowerFOVLimit) {
             cam.m_Lens.FieldOfView = lowerFOVLimit;
         }
+    }
+
+    public void RotateCharacterToForwardCamera() {
+        Vector3 viewDir = playerBody.position - new Vector3(transform.position.x, playerBody.position.y, transform.position.z);
+        orientation.forward = viewDir.normalized;
+        playerObj.forward = orientation.forward;
     }
 }

@@ -857,6 +857,7 @@ MonoBehaviour:
   rb: {fileID: 2971927686058650267}
   orientation: {fileID: 2621055801831358878}
   isGrounded: 1
+  allowMovement: 1
 --- !u!1 &8182666803942135110
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1132,7 @@ MonoBehaviour:
   playerObj: {fileID: 2508182735896665551}
   rb: {fileID: 2971927686058650267}
   cam: {fileID: 566673819238526798}
-  rotationSpeed: 7
+  bodyRotationSpeed: 15
 --- !u!20 &6391875863358239297
 Camera:
   m_ObjectHideFlags: 0
@@ -1402,6 +1403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2787249319689521748}
+  playerMovement: {fileID: 5264601716675894608}
   attackState: 1
   atIdle: 1
   isInAction: 0
