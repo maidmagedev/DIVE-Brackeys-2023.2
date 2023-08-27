@@ -525,7 +525,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4237591289677290692}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.09853762, y: -0.0000000042604653, z: -4.2186918e-10, w: 0.99513334}
+  m_LocalRotation: {x: -0.09853762, y: -0.0000000042793973, z: -4.2374376e-10, w: 0.99513334}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1173,7 +1173,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8406454815095288951}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.15554412, y: 0.000000016996957, z: 0.0000000026763507, w: 0.98782897}
+  m_LocalRotation: {x: -0.15554412, y: -0.000000016996967, z: -0.0000000026763523,
+    w: 0.98782897}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1256,7 +1257,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8865063046356523983}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.15554412, y: 0.000000037044007, z: 0.000000005832971, w: 0.98782897}
+  m_LocalRotation: {x: -0.15554412, y: -0.000000037044014, z: -0.000000005832972,
+    w: 0.98782897}
   m_LocalPosition: {x: 0, y: -1, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1504,10 +1506,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11bf7ee85041e9545b1e07938165ef0d,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 556623364932167888}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11bf7ee85041e9545b1e07938165ef0d,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3618593050302997643}
   m_SourcePrefab: {fileID: 100100000, guid: 11bf7ee85041e9545b1e07938165ef0d, type: 3}
 --- !u!1 &985154336668837533 stripped
@@ -1528,12 +1526,6 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 8630262294184179653}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &3338389245185106420 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -2769557088774023631, guid: 11bf7ee85041e9545b1e07938165ef0d,
-    type: 3}
-  m_PrefabInstance: {fileID: 8630262294184179653}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8092511862181515310 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 11bf7ee85041e9545b1e07938165ef0d,
@@ -1546,21 +1538,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8630262294184179653}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &556623364932167888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8864684978131602068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85615b107a15eca43bfc379aa4139e81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  headBone: {fileID: 3338389245185106420}
-  target: {fileID: 0}
-  rotationSpeed: 5
 --- !u!114 &3618593050302997643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1580,6 +1557,6 @@ MonoBehaviour:
   isInAction: 0
   allowAnimationCancel: 0
   debugqueuesize: 0
-  meleeMode: 0
+  meleeMode: 1
   gunLayer1: {fileID: 985154336668837533}
   gunLayer2: {fileID: 5628643031127461421}
