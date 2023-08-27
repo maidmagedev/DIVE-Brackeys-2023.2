@@ -17,6 +17,11 @@ public class PlayerAnimations : MonoBehaviour
     private bool allowBufferInput = false; // if true, allows the player to queue up the next move in an attack string.
     public bool allowAnimationCancel = false; // allows this animation to be overridden.
     public int debugqueuesize;
+    public bool meleeMode;
+    [SerializeField] GameObject gunLayer1;
+    [SerializeField] GameObject gunLayer2;
+    bool gunOnCooldown;
+
 
     // AnimStates are used by the animation queue - containing,
     // clipName - information on which animation clip to play via Crossfade() - must be in the animator's animation controller
@@ -80,49 +85,88 @@ public class PlayerAnimations : MonoBehaviour
 
 
     void InputHandler() {
-        // Concerning the basic attack combo string...
-        if (Input.GetMouseButtonDown(0)) {
-            // Queue up an attack, if we are not attacking or if we are allowed to buffer.
-            // Attack buffer true/false is expected to be handled by the animation clip utilizing Events.
-            if (!isInAction || allowBufferInput) {
+        // Weapon Swap
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            FullAnimationReset();
+            Debug.Log("Swap");
+            meleeMode = !meleeMode;
+            if (meleeMode) {
+                animator.SetLayerWeight(1, 0);
+                gunLayer1.SetActive(true);
+                gunLayer2.SetActive(false);
+            } else {
+                animator.SetLayerWeight(1, 1);
+                animator.CrossFade("Aim", 0.15f, 1);
+                gunLayer1.SetActive(false);
+                gunLayer2.SetActive(true);
+            }
+        }
 
-                if (allowBufferInput) {
-                    // only accept one buffer at a time.
-                    allowBufferInput = false;
+        if (Input.GetMouseButtonDown(0)) {
+            if (meleeMode) {
+                MeleeAttackHandler();
+            } else {
+                if (!gunOnCooldown) {
+                    StartCoroutine(ShootGun());
                 }
-                Debug.Log(" + {BUFFER} Queuing Swing: " + attackState);
-                switch(attackState) {
-                    case 1:
-                        animQueue.Enqueue(new AnimState("Heavy1", 2.708f, 0.0f, false, true, true));
-                        break;
-                    case 2:
-                        animQueue.Enqueue(new AnimState("Heavy2", 2.667f, 0f, false, true, true));
-                        break;
-                    case 3:
-                        animQueue.Enqueue(new AnimState("Heavy3", 2.667f, 0f, false, true, true));
-                        break;
-                    case 4:
-                        animQueue.Enqueue(new AnimState("Heavy4", 2.667f, 0f, false, true, true));
-                        break;
-                    case 5:
-                        animQueue.Enqueue(new AnimState("Heavy5", 2.042f, 0f, false, true, true));
-                        break;
-                }
-                attackState++;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Space)) {
-            Debug.Log("DASH OVERRIDE!");
-            animQueue.Clear();
-            StopAllCoroutines();
-            isInAction = false;
-            playerMovement.allowMovement = true;
+            FullAnimationReset();
             StartCoroutine(playerMovement.MovePlayerForDuration(500, 0.2f));
             animQueue.Enqueue(new AnimState("Dash", 0.667f, 0, true, true, true));
         }
     }
 
+    IEnumerator ShootGun() {
+        gunOnCooldown = true;
+        animator.CrossFade("Aim", 0.1f, 1);
+        yield return null;
+        animator.CrossFade("Shoot", 0.05f, 1);
+        yield return new WaitForSeconds(0.75f);
+        gunOnCooldown = false;
+    }
+
+    private void MeleeAttackHandler() {
+        // Queue up an attack, if we are not attacking or if we are allowed to buffer.
+        // Attack buffer true/false is expected to be handled by the animation clip utilizing Events.
+        if (!isInAction || allowBufferInput) {
+
+            if (allowBufferInput) {
+                // only accept one buffer at a time.
+                allowBufferInput = false;
+            }
+            Debug.Log(" + {BUFFER} Queuing Swing: " + attackState);
+            switch(attackState) {
+                case 1:
+                    animQueue.Enqueue(new AnimState("Heavy1", 2.708f, 0.0f, false, true, true));
+                    break;
+                case 2:
+                    animQueue.Enqueue(new AnimState("Heavy2", 2.667f, 0f, false, true, true));
+                    break;
+                case 3:
+                    animQueue.Enqueue(new AnimState("Heavy3", 2.667f, 0f, false, true, true));
+                    break;
+                case 4:
+                    animQueue.Enqueue(new AnimState("Heavy4", 2.667f, 0f, false, true, true));
+                    break;
+                case 5:
+                    animQueue.Enqueue(new AnimState("Heavy5", 2.042f, 0f, false, true, true));
+                    break;
+            }
+            attackState++;
+        }
+    }
+
+    // Try to avoid using.
+    public void FullAnimationReset() {
+        animQueue.Clear();
+        StopAllCoroutines();
+        isInAction = false;
+        playerMovement.allowMovement = true;
+        gunOnCooldown = false;
+    }
 
     public void MovementEvent(float duration) {
         StartCoroutine(playerMovement.MovePlayerForDuration(100, duration));
