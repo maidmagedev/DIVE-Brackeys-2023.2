@@ -17,7 +17,7 @@ public class PlayerAnimations : MonoBehaviour
     private bool allowBufferInput = false; // if true, allows the player to queue up the next move in an attack string.
     public bool allowAnimationCancel = false; // allows this animation to be overridden.
     public int debugqueuesize;
-    public bool meleeMode;
+    public bool meleeMode = true;
     [SerializeField] GameObject gunLayer1;
     [SerializeField] GameObject gunLayer2;
     bool gunOnCooldown;

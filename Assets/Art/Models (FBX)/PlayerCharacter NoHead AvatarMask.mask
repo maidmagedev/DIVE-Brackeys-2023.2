@@ -8,4 +8,434 @@ AvatarMask:
   m_PrefabAsset: {fileID: 0}
   m_Name: PlayerCharacter NoHead AvatarMask
   m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-  m_Elements: []
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Clothing.002
+    m_Weight: 1
+  - m_Path: Humanoid Rig
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK/FK Switch Arm.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK/FK Switch Arm.L/IK/FK Switch Arm.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK/FK Switch Arm.R
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/IK/FK Switch Arm.R/IK/FK Switch Arm.R_end
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/IK/FK Switch Leg.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK/FK Switch Leg.L/IK/FK Switch Leg.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK/FK Switch Leg.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK/FK Switch Leg.R/IK/FK Switch Leg.R_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK_Arm_Pole.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK_Arm_Pole.L/IK_Arm_Pole.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK_Arm_Pole.R
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/IK_Arm_Pole.R/IK_Arm_Pole.R_end
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/IK_Arm_Target.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK_Arm_Target.L/IK_Arm_Target.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK_Arm_Target.R
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/IK_Arm_Target.R/IK_Arm_Target.R_end
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/IK_Leg_Pole.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK_Leg_Pole.L/IK_Leg_Pole.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK_Leg_Pole.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK_Leg_Pole.R/IK_Leg_Pole.R_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK_Leg_Target.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK_Leg_Target.L/IK_Leg_Target.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK_Leg_Target.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/IK_Leg_Target.R/IK_Leg_Target.R_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label Arm.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label Arm.L/label Arm.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label Arm.R
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/label Arm.R/label Arm.R_end
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/label blade L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label blade L/label blade L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label blade right
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label blade right/label blade right_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label gun L
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/label gun L/label gun L_end
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/label gun right
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/label gun right/label gun right_end
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/label leg.l
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label leg.l/label leg.l_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label leg.r
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label leg.r/label leg.r_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_FK
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_FK/label_FK_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_FK.001
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_FK.001/label_FK.001_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_FK.002
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_FK.002/label_FK.002_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_FK.003
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_FK.003/label_FK.003_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_IK
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_IK/label_IK_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_IK.001
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_IK.001/label_IK.001_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_IK.002
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_IK.002/label_IK.002_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_IK.003
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_IK.003/label_IK.003_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_off
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_off/label_off_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_off.001
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_off.001/label_off.001_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_off.002
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_off.002/label_off.002_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_off.003
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_off.003/label_off.003_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_On.001
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_On.001/label_On.001_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_On.002
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_On.002/label_On.002_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_on.002
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_on.002/label_on.002_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_on.003
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/label_on.003/label_on.003_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/DEF_thigh.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/DEF_thigh.L/DEF_shin.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/DEF_thigh.L/DEF_shin.L/foot.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/DEF_thigh.L/DEF_shin.L/foot.L/toe.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/DEF_thigh.L/DEF_shin.L/foot.L/toe.L/toe.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/DEF_thigh.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/DEF_thigh.R/DEF_shin.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/DEF_thigh.R/DEF_shin.R/foot.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/DEF_thigh.R/DEF_shin.R/foot.R/toe.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/DEF_thigh.R/DEF_shin.R/foot.R/toe.R/toe.R_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/FK_thigh.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/FK_thigh.L/FK_shin.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/FK_thigh.L/FK_shin.L/FK_shin.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/FK_thigh.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/FK_thigh.R/FK_shin.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/FK_thigh.R/FK_shin.R/FK_shin.R_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/FK_thigh.R/GunHandle
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/FK_thigh.R/GunHandle/Gun
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/FK_thigh.R/GunHandle/GunHandle_end
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/IK_thigh.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/IK_thigh.L/IK_leg_stick.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/IK_thigh.L/IK_leg_stick.L/IK_leg_stick.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/IK_thigh.L/IK_shin.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/IK_thigh.L/IK_shin.L/IK_shin.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/IK_thigh.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/IK_thigh.R/IK_leg_stick.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/IK_thigh.R/IK_leg_stick.R/IK_leg_stick.R_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/IK_thigh.R/IK_shin.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/IK_thigh.R/IK_shin.R/IK_shin.R_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/pelvis.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/pelvis.L/pelvis.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/pelvis.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/pelvis.R/pelvis.R_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/breast.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/breast.L/breast.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/breast.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/breast.R/breast.R_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.01.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.01.L/f_index.01.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.01.L/f_index.01.L/f_index.01.L.002
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.01.L/f_index.01.L/f_index.01.L.002/f_index.01.L.001
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.01.L/f_index.01.L/f_index.01.L.002/f_index.01.L.001/f_index.01.L.001_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.01.L/thumb.01.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.01.L/thumb.01.L/thumb.02.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.01.L/thumb.01.L/thumb.02.L/thumb.03.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.01.L/thumb.01.L/thumb.02.L/thumb.03.L/thumb.03.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.02.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.02.L/f_middle.01.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.02.L/f_middle.01.L/f_middle.01.L.002
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.02.L/f_middle.01.L/f_middle.01.L.002/f_middle.01.L.003
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.02.L/f_middle.01.L/f_middle.01.L.002/f_middle.01.L.003/f_middle.01.L.003_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.03.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.03.L/f_ring.01.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.03.L/f_ring.01.L/f_ring.01.L.002
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.03.L/f_ring.01.L/f_ring.01.L.002/f_ring.01.L.001
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.03.L/f_ring.01.L/f_ring.01.L.002/f_ring.01.L.001/f_ring.01.L.001_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.04.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.04.L/f_pinky.01.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.04.L/f_pinky.01.L/f_pinky.01.L.002
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.04.L/f_pinky.01.L/f_pinky.01.L.002/f_pinky.01.L.001
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/DEF_upper_arm.L/DEF_forearm.L/hand.L/palm.04.L/f_pinky.01.L/f_pinky.01.L.002/f_pinky.01.L.001/f_pinky.01.L.001_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/FK_upper_arm.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/FK_upper_arm.L/FK_forearm.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/FK_upper_arm.L/FK_forearm.L/FK_forearm.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/IK_upper_arm.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/IK_upper_arm.L/IK_arm_stick.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/IK_upper_arm.L/IK_arm_stick.L/IK_arm_stick.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/IK_upper_arm.L/IK_forearm.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.L/IK_upper_arm.L/IK_forearm.L/IK_forearm.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.01.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.01.R/f_index.01.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.01.R/f_index.01.R/f_index.01.R.002
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.01.R/f_index.01.R/f_index.01.R.002/f_index.01.R.001
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.01.R/f_index.01.R/f_index.01.R.002/f_index.01.R.001/f_index.01.R.001_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.01.R/thumb.01.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.01.R/thumb.01.R/thumb.02.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.01.R/thumb.01.R/thumb.02.R/thumb.03.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.01.R/thumb.01.R/thumb.02.R/thumb.03.R/thumb.03.R_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.02.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.02.R/f_middle.01.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.02.R/f_middle.01.R/f_middle.01.R.002
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.02.R/f_middle.01.R/f_middle.01.R.002/f_middle.01.R.003
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.02.R/f_middle.01.R/f_middle.01.R.002/f_middle.01.R.003/f_middle.01.R.003_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.03.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.03.R/f_ring.01.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.03.R/f_ring.01.R/f_ring.01.R.002
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.03.R/f_ring.01.R/f_ring.01.R.002/f_ring.01.R.001
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.03.R/f_ring.01.R/f_ring.01.R.002/f_ring.01.R.001/f_ring.01.R.001_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.04.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.04.R/f_pinky.01.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.04.R/f_pinky.01.R/f_pinky.01.R.002
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.04.R/f_pinky.01.R/f_pinky.01.R.002/f_pinky.01.R.001
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/DEF_upper_arm.R/DEF_forearm.R/hand.R/palm.04.R/f_pinky.01.R/f_pinky.01.R.002/f_pinky.01.R.001/f_pinky.01.R.001_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/FK_upper_arm.R
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/FK_upper_arm.R/FK_forearm.R
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/FK_upper_arm.R/FK_forearm.R/FK_forearm.R_end
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/IK_upper_arm.R
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/IK_upper_arm.R/IK_arm_stick.R
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/IK_upper_arm.R/IK_arm_stick.R/IK_arm_stick.R_end
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/IK_upper_arm.R/IK_forearm.R
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/shoulder.R/IK_upper_arm.R/IK_forearm.R/IK_forearm.R_end
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/spine.004
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/spine.004/spine.005
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/spine.004/spine.005/Headset
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/spine.004/spine.005/spine.005_end
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/strap1.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/strap1.L/strap2.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/strap1.L/strap2.L/strap3.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/strap1.L/strap2.L/strap3.L/buckle.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/strap1.L/strap2.L/strap3.L/buckle.L/buckle.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/strap1.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/strap1.R/strap2.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/strap1.R/strap2.R/strap3.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/strap1.R/strap2.R/strap3.R/buckle.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/spine/spine.001/spine.002/spine.003/strap1.R/strap2.R/strap3.R/buckle.R/buckle.R_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/Switch_Blade.L
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/Switch_Blade.L/Switch_Blade.L_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/Switch_Blade.R
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/Switch_Blade.R/Switch_Blade.R_end
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/Switch_Gun.L
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/Switch_Gun.L/Switch_Gun.L_end
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/Switch_Gun.R
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/Switch_Gun.R/Switch_Gun.R_end
+    m_Weight: 0
+  - m_Path: Humanoid Rig/root/Weapon_Melee
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/Weapon_Melee/GunSlab
+    m_Weight: 1
+  - m_Path: Humanoid Rig/root/Weapon_Melee/Weapon_Melee_end
+    m_Weight: 1
+  - m_Path: Humanoid.001
+    m_Weight: 1
