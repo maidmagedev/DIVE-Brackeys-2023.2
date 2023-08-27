@@ -69,6 +69,8 @@ public class PlayerAnimations : MonoBehaviour
                 isRunning = false;
             } else if (!isInAction && playerMovement.rb.velocity.magnitude > 0.1f && !isRunning) {
                 animator.CrossFade("Run", 0.0f, 0);
+                animator.CrossFade("Run", 0.0f, 1);
+                animator.CrossFade("Run", 0.0f, 2);
                 //animQueue.Enqueue(new AnimState("Run", 0.833f, 0.25f, false, false, false));
                 atIdle = false;
                 isRunning = true;
@@ -91,16 +93,23 @@ public class PlayerAnimations : MonoBehaviour
             Debug.Log("Swap");
             meleeMode = !meleeMode;
             if (meleeMode) {
-                animator.SetLayerWeight(1, 0);
+                // animator.SetLayerWeight(1, 1);
+                // animator.SetLayerWeight(2, 1);
                 gunLayer1.SetActive(true);
                 gunLayer2.SetActive(false);
             } else {
-                animator.SetLayerWeight(1, 1);
+                //animator.SetLayerWeight(1, 1);
+                // animator.SetLayerWeight(1, 0);
+                // animator.SetLayerWeight(2, 0);
                 animator.CrossFade("Aim", 0.15f, 1);
                 gunLayer1.SetActive(false);
                 gunLayer2.SetActive(true);
             }
         }
+        // if (Input.GetKeyDown(KeyCode.Alpha1)) {
+        //     animator.SetLayerWeight(1, 0);
+        //     animator.SetLayerWeight(2, 0);
+        // }
 
         if (Input.GetMouseButtonDown(0)) {
             if (meleeMode) {
@@ -189,8 +198,12 @@ public class PlayerAnimations : MonoBehaviour
 
         Debug.Log("[Q] - Playing animation with name: " + currAnimation.clipName);
         animator.CrossFade("Idle", 0.1f, 0);
+        animator.CrossFade("Idle", 0.1f, 1);
+        animator.CrossFade("Idle", 0.1f, 2);
         yield return null;
         animator.CrossFade(currAnimation.clipName, currAnimation.transitionTime, 0);
+        animator.CrossFade(currAnimation.clipName, currAnimation.transitionTime, 1);
+        animator.CrossFade(currAnimation.clipName, currAnimation.transitionTime, 2);
 
         // Handle additional conditions for this AnimState.
         allowBufferInput = !currAnimation.disableBufferOnStart;
