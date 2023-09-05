@@ -525,7 +525,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4237591289677290692}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.09853762, y: -0.0000000042793973, z: -4.2374376e-10, w: 0.99513334}
+  m_LocalRotation: {x: -0.098537624, y: 0.0000000042806607, z: 4.238689e-10, w: 0.99513334}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1003,11 +1003,13 @@ MonoBehaviour:
   moveSpeed: 8
   jumpForce: 10
   groundDrag: 5
+  dashStack: 3
   rb: {fileID: 2971927686058650267}
   orientation: {fileID: 2621055801831358878}
   isGrounded: 1
   allowMovement: 1
   playerHasInput: 0
+  pAnim: {fileID: 3618593050302997643}
 --- !u!1 &8182666803942135110
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,8 +1175,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8406454815095288951}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.15554412, y: -0.000000016996967, z: -0.0000000026763523,
-    w: 0.98782897}
+  m_LocalRotation: {x: -0.15554412, y: 0.000000016996957, z: 0.0000000026763507, w: 0.98782897}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1257,8 +1258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8865063046356523983}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.15554412, y: -0.000000037044014, z: -0.000000005832972,
-    w: 0.98782897}
+  m_LocalRotation: {x: -0.15554412, y: 0.000000037044007, z: 0.000000005832971, w: 0.98782897}
   m_LocalPosition: {x: 0, y: -1, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

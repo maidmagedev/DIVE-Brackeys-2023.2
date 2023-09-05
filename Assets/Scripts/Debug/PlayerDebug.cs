@@ -7,6 +7,7 @@ using UnityEditor.Callbacks;
 public class PlayerDebug : MonoBehaviour
 {
     PlayerMovement playerMovement;
+    PlayerAnimations playerAnimations;
     [SerializeField] TextMeshProUGUI textMesh;
 
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class PlayerDebug : MonoBehaviour
         textMesh.text = "debug values\n";
         textMesh.text += "vel: " + playerMovement.rb.velocity;
         textMesh.text += "\n";
+        textMesh.text += "dashes: " + playerMovement.dashStack;
         textMesh.text += "\n";
     }
 }
