@@ -8,6 +8,7 @@ public class Billboard : MonoBehaviour
 {
     [SerializeField] Camera targetCam;
     [SerializeField] Transform targetObject;
+    [SerializeField] bool ignoreYAxis = true;
 
     void Start() {
         if (targetCam == null) {
@@ -26,7 +27,9 @@ public class Billboard : MonoBehaviour
 
         // A solution by Expat Studios on youtube, in their "BillBoarding Tutorial - Unity" video posted Dec 6,2021.
         Vector3 cameraDirection = targetCam.transform.forward;
-        cameraDirection.y = 0;
+        if (ignoreYAxis) {
+            cameraDirection.y = 0;
+        }
         targetObject.rotation = Quaternion.LookRotation(cameraDirection);
     }
 }
